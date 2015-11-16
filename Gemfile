@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Primary Dependencies
 gem 'rails', '4.2.4'
+gem 'rack', '1.6.4'
 gem 'pg'
 
 # Assets

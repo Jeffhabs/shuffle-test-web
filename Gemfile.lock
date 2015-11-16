@@ -339,6 +339,7 @@ DEPENDENCIES
   pry-rails
   puma
   quiet_assets
+  rack (= 1.6.4)
   rails (= 4.2.4)
   rspec-rails
   sass-rails (~> 5.0)
