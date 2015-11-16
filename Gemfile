@@ -17,6 +17,7 @@ gem 'has_scope'
 
 # Deployment
 gem 'app'
+gem 'puma', '2.11.1'
 
 # Active Admin
 gem 'activeadmin', github: 'activeadmin/activeadmin', branch: 'master'
