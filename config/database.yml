@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: root
+  password:
+
+test:
+  <<: *default
+  database: shuffle_test_test
+
+development:
+  <<: *default
+  database: shuffle_test_development
+
+deployment: &deployment
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  host:     <%= ENV['APP_DB_HOST'] %>
+  database: <%= ENV['APP_DB_NAME'] %>
+  username: <%= ENV['APP_DB_USERNAME'] %>
+  password: <%= ENV['APP_DB_PASSWORD'] %>
+
+staging:
+  <<: *deployment
+
+production:
+  <<: *deployment

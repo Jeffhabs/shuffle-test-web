@@ -1,0 +1,36 @@
+<%= semantic_form_for [:admin, @question] do |f| %>
+  <%= f.semantic_errors %>
+
+  <%= f.inputs 'Question Detail' do %>
+    <%= f.input :category %>
+    <%= f.input :question_type, label: 'Type', as: :select, collection: [['Short Answer', 'short_answer'], ['Long Answer', 'long_answer'], ['Multiple Choice', 'multiple_choice']] %>
+    <%= f.input :text %>
+    <%= f.input :provided_language %>
+    <%= f.input :provided %>
+  <% end %>
+
+  <!--
+  <%= f.inputs 'Answers' do %>
+    <table class="answers">
+      <tr>
+        <th>Text</th>
+        <th>Correct</th>
+        <th>Remove</th>
+      </tr>
+
+      <%= f.semantic_fields_for :answers do |answer| %>
+        <%= render 'answer_fields', f: answer %>
+      <% end %>
+    </table>
+
+    <span class="links">
+      <%= link_to_add_association 'Add Answer', f, :answers, class: 'button' %>
+    </span>
+  <% end %>
+  -->
+
+  <%= f.actions do %>
+    <%= f.action :submit %>
+    <li class="cancel"><%= link_to 'Cancel', [:admin, @question] %></li>
+  <% end %>
+<% end %>

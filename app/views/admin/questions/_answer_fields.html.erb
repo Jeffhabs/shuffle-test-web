@@ -1,0 +1,6 @@
+<tr>
+  <% %i(text correct).each do |column| %>
+    <td><%= f.input column, label: false %></td>
+  <% end %>
+  <td><%= link_to_remove_association "Remove", f, class: 'button' %></td>
+</tr>
