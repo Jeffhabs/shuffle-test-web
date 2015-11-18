@@ -4,10 +4,10 @@
 #
 #  id                :integer          not null, primary key
 #  category_id       :integer
-#  question_type     :string
+#  question_type     :string(255)
 #  text              :text
 #  provided          :text
-#  provided_language :string
+#  provided_language :string(255)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
@@ -23,8 +23,8 @@ RSpec.describe Question, type: :model do
   it { is_expected.to have_many :answers }
 
   it { is_expected.to validate_presence_of :question_type }
-  it { is_expected.to validate_inclusion_of(:question_type).in_array ['short_answer', 'long_answer', 'multiple_choice'] }
+  it { is_expected.to validate_inclusion_of(:question_type).in_array %w(short_answer long_answer multiple_choice) }
 
   it { is_expected.to validate_presence_of :provided_language }
-  it { is_expected.to validate_inclusion_of(:provided_language).in_array ['Python', 'Ruby', 'C++'] }
+  it { is_expected.to validate_inclusion_of(:provided_language).in_array %w(Python Ruby C++) }
 end
