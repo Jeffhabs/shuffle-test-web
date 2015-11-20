@@ -13,11 +13,15 @@ ActiveAdmin.register Question do
     actions
   end
 
-  filter :category_id
+  filter :category
   filter :question_type
   filter :text
   filter :provided_language
   filter :provided
+
+  action_item :new, only: :show, priority: 1 do
+      link_to 'New Question', new_admin_question_path
+  end
 
   form do |_f|
     render partial: 'form'
