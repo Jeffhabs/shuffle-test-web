@@ -15,22 +15,17 @@ class Test < ActiveRecord::Base
 
   validates_presence_of :name
 
+  attr_accessor :category_ids
   attr_accessor :short_questions_count
   attr_accessor :long_questions_count
+  validates_presence_of :category_ids, on: :create
   validates_presence_of :short_questions_count, greater_than: 0, on: :create
   validates_presence_of :long_questions_count, greater_than: 0, on: :create
 
   before_create do
     if questions.empty?
-      questions << Question.short.order('RANDOM()').limit(short_questions_count)
-      questions << Question.long.order('RANDOM()').limit(long_questions_count)
-    else
-      if questions.short.count < short_questions_count
-        questions << Question.where.not(id: questions.long.map(&:id)).order('RANDOM()')
-      end
-
-      if questions.long.count < long_questions_count
-      end
+      questions << Question.short.where(category_id: category_ids).order('RANDOM()').limit(short_questions_count)
+      questions << Question.long.where(category_id: category_ids).order('RANDOM()').limit(long_questions_count)
     end
   end
 end

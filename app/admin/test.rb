@@ -6,14 +6,10 @@ ActiveAdmin.register Test do
     selectable_column
     id_column
     column :name
-    column :short_questions_count
-    column :long_questions_count
     actions
   end
 
   filter :name
-  filter :short_questions_count
-  filter :long_questions_count
 
   show do
     panel 'Questions' do
@@ -38,8 +34,9 @@ ActiveAdmin.register Test do
     f.inputs 'Test Details' do
       f.input :name
       if request.params[:action] == 'new'
-        f.input :short_questions_count, if: proc { action == 'create' }
-        f.input :long_questions_count, if: proc { action == 'create' }
+        f.input :category_ids, as: :select, collection: Category.all, multiple: true, if: proc { action == 'create' }
+        f.input :short_questions_count, as: :number, if: proc { action == 'create' }
+        f.input :long_questions_count, as: :number, if: proc { action == 'create' }
       end
     end
     f.actions
