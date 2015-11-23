@@ -1,6 +1,6 @@
 ActiveAdmin.register Test do
   menu priority: 1
-  permit_params :name, :short_questions_count, :long_questions_count
+  permit_params :name, :short_questions_count, :long_questions_count, category_ids: []
 
   index do
     selectable_column
@@ -33,10 +33,10 @@ ActiveAdmin.register Test do
   form do |f|
     f.inputs 'Test Details' do
       f.input :name
-      if request.params[:action] == 'new'
-        f.input :category_ids, as: :select, collection: Category.all, multiple: true, if: proc { action == 'create' }
-        f.input :short_questions_count, as: :number, if: proc { action == 'create' }
-        f.input :long_questions_count, as: :number, if: proc { action == 'create' }
+      if request.params[:action] == 'new' || request.params[:action] == 'create'
+        f.input :category_ids, as: :select, collection: Category.all, multiple: true
+        f.input :short_questions_count, as: :number
+        f.input :long_questions_count, as: :number
       end
     end
     f.actions

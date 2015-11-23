@@ -19,4 +19,7 @@ ActiveAdmin.setup do |config|
 
   # == Controller Filters
   config.localize_format = :long
+
+  # == Print Stylesheet
+  config.register_stylesheet 'print.css', media: :print
 end

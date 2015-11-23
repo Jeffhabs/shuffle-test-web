@@ -1,0 +1,40 @@
+@media print {
+  h1, h3, div.panel_contents th, .comments, #sidebar {
+    display:none;
+  }
+  #title_bar h2, h2 {
+    line-height: 100%;
+    margin: 0;
+  }
+  #active_admin_content, .panel {
+    border:0px;
+  }
+  #active_admin_content:before {
+    content: "Name _____________________________";
+  }
+  div.panel_contents table {
+    counter-reset: questions;
+  }
+  div.panel_contents td.col.col-text {
+    display: block;
+    padding-left: 30px;
+    background: #fff;
+    position: relative;
+    border: 0px;
+  }
+  div.panel_contents td.col.col-text:before {
+    content: counter(questions);
+    counter-increment: questions;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font: bold 25px/1 sans-serif;
+  }
+  div.panel_contents td.col.col-provided {
+    display: block;
+    background: #fff;
+    white-space: pre;
+    border: 0px;    
+    padding: 20px 0 20px 30px;
+  }
+} 
