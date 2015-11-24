@@ -32,6 +32,7 @@ class Question < ActiveRecord::Base
   validates_presence_of :provided_language
   validates_inclusion_of :provided_language, in: %w(Python Ruby C++)
 
+  validates_presence_of :category
   validates_presence_of :text
   validates_presence_of :provided
 
