@@ -42,7 +42,7 @@ Installation
 
 - Default Login: 
 	USER:     admin@example.com
-	PASSOWRD: password
+	PASSWORD: password
 
 Create Admin User
 =================
