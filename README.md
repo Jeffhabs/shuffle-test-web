@@ -1,7 +1,7 @@
-ShuffleTest
+Shuffle Test
 ===========
 
-A simple program that allows useres to generate random-quiz questions for
+A simple program that allows users to generate random-quiz questions for
 CS1400 programming. 
 
 - Source Site: http://web-shuffletest.rhcloud.com/
@@ -49,7 +49,7 @@ Create Admin User
   - Click top menu "Admin Users"
   - Click "New Admin User"
   - Enter email in "EMAIL" field
-  - Enter passowrd in "PASSWORD" field
+  - Enter password in "PASSWORD" field
   - Confirm password in "PASSWORD CONFIRMATION" field
   - Submit by clicking "Create Admin User"
 
@@ -62,9 +62,9 @@ View Admin Users
   - Clicking on "Edit" directs you to change email and password screen
     //to update Admin Email password confirmation is required then "Update Admin      User" button may be pressed
   - Clicking on "Delete" removes the Admin in that row
-  - Batch Actions allows selection of multiple Admins for deletion
+  - Batch Actions allows selection of multiple Administrators for deletion
 
-  - Sorting Admins
+  - Sorting Administrators
     //Admin field can be sorted by EMAIL, CURRENT SIGN IN AT, SIGN IN COUNT, or       CREATED AT 
     - Email filter uses contains, equals, starts with, ends with, and text input      box
     - Current sign in filter uses date-picker
@@ -84,7 +84,7 @@ Categories
 
   - Categories are organized by Id, Title, and Created At. 
   - Each category has view, edit, and delete options
-    - View displays category detials and allows commenting
+    - View displays category details and allows commenting
     - Edit lets you change category title 
     - Delete removes that single category
 
@@ -95,7 +95,7 @@ Categories
 Questions
 ============
   - Click top menu button "Questions" to view all questions
-  - Questions can be filterd by CATEGORY, QUESTION TYPE, TEXT, PROVIDED LANGUAGE,   and PROVIDED
+  - Questions can be filtered by CATEGORY, QUESTION TYPE, TEXT, PROVIDED LANGUAGE,   and PROVIDED
   - CATEGORY filter uses equals, greater than, less than, and text input box
   - QUESTION TYPE filter uses contains, equals, starts with, ends with, and text    input box
   - TEST filter uses contains, equals, starts with, ends with, and text input box
@@ -106,7 +106,7 @@ Questions
   - Each questions contains view, edit, and delete options
   - Create new question press "New Question" button
     - Use category-picker to choose question category
-    - Use type-picker to chose either Short Anser, Long Answer, or Multiple Choice
+    - Use type-picker to chose either Short Answer, Long Answer, or Multiple Choice
     - Use "Text" input box to type main question
     - Use "Provided Language" input box to type programming language name
     - Use "Provided" input box to give extra question details and examples
