@@ -33,7 +33,7 @@
     position: absolute;
     left: 5px;
     top: 5px;
-    font: bold 25px/1 sans-serif;
+    font: bold 20px/1 sans-serif;
   }
   div.panel_contents td.col.col-provided {
     display: block;
@@ -42,5 +42,8 @@
     border: 0px;
     padding: 20px 0 20px 30px;
   }
+  .avoid {
+    page-break-inside: avoid !important;
+    margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+  }
 }
-

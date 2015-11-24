@@ -4,7 +4,6 @@ ActiveAdmin.register Test do
 
   index do
     selectable_column
-    id_column
     column :name
     actions
   end
@@ -14,8 +13,8 @@ ActiveAdmin.register Test do
   show do
     panel 'Questions' do
       table_for resource.questions do
-        column :text
-        column :provided
+        column(:text)     { |test| div test.text, class: 'avoid' }
+        column(:provided) { |test| div test.provided, class: 'avoid' }
       end
     end
     active_admin_comments
