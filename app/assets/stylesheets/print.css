@@ -8,7 +8,12 @@
   }
   #active_admin_content, .panel {
     border:0px;
+    page-break-inside: auto;
   }
+  table tr.even, table tr.odd, table td {
+    page-break-inside: avoid;
+  }
+
   #active_admin_content:before {
     content: "Name _____________________________";
   }
@@ -34,7 +39,8 @@
     display: block;
     background: #fff;
     white-space: pre;
-    border: 0px;    
+    border: 0px;
     padding: 20px 0 20px 30px;
   }
-} 
+}
+
