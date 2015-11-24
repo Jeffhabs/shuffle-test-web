@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :test_question do
-    test ""
-    question ""
+    test
+    question
   end
 end

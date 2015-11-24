@@ -16,9 +16,8 @@
 
 FactoryGirl.define do
   factory :answer do
-    question nil
-text "MyText"
-correct false
+    question
+    text     { Faker::Lorem.sentence }
+    correct  { rand(2) == 0 }
   end
-
 end

@@ -10,10 +10,14 @@
 
 FactoryGirl.define do
   factory :test do
-    name "MyString"
-category ""
-show_questions_count 1
-long_questions_count 1
-  end
+    name { Faker::Lorem.word }
+    category_ids { create_list(:category, 3).map(&:id) }
+    short_questions_count 1
+    long_questions_count 1
 
+    after(:create) do |test|
+      test.test_questions = create_list(:test_question, 3, test: test)
+      test.save!
+    end
+  end
 end

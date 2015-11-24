@@ -9,7 +9,7 @@
 #
 
 class Test < ActiveRecord::Base
-  has_many :test_questions, dependent: :destroy
+  has_many :test_questions, dependent: :destroy, inverse_of: :test
 
   has_many :questions, through: :test_questions, inverse_of: :tests
 

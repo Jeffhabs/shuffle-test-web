@@ -11,7 +11,7 @@
 #
 
 class TestQuestion < ActiveRecord::Base
-  belongs_to :test, dependent: :destroy
+  belongs_to :test, inverse_of: :questions
   belongs_to :question
 
   scope :short, -> { where question: { question_type: 'short_answer' } }

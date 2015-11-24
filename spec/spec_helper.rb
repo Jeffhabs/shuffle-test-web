@@ -1,17 +1,20 @@
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 
-unless ENV["SIMPLECOV"] == 'false'
+unless ENV['SIMPLECOV'] == 'false'
   require 'simplecov'
   SimpleCov.start 'rails' do
-    add_filter "/spec"
+    add_filter '/spec'
+    add_filter '/vendor'
+
+    add_group 'Admin', 'app/admin'
   end
 end
 
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
