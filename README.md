@@ -39,7 +39,14 @@ Installation
 =============
 
 - Source Site: http://web-shuffletest.rhcloud.com/
-
+- Requirements
+	- Ruby 2.0.0+
+	- Bundler
+	    -via 'gem install bundler'
+	-Bundle Packages
+	    -via 'bundle install'
+	-Database Setup 'bundle exec rake db:setup'
+	-Start Server 'bundle exec rails server'
 - Default Login: 
 	USER:     admin@example.com
 	PASSWORD: password
